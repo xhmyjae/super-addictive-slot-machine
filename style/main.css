@@ -8,6 +8,24 @@ body {
     background-image: url(../resources/background.jpg);
     display: flex;
     flex-direction: column;
+    color: #FDFDFF;
+}
+
+.stats {
+    display: flex;
+}
+
+.game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* COINS */
+.coins {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
 }
 
 /* SLOTS */
@@ -17,7 +35,41 @@ body {
 }
 
 .slot {
-    background: #FDFDFF;
-    width: 24vh;
-    height: 10vh;
+    background: rgba(255, 255, 255, 0.83);
+    width: 25vh;
+    height: 32vh;
+    box-shadow: inset 0px 0px 20px 1px rgb(248 74 167), 0px 0px 20px 1px rgb(248 74 167);
+    margin: 0 1vh;
+}
+
+/* BUTTONS */
+
+.bet-button {
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bet-button:hover {
+    filter: brightness(1.2);
+}
+
+.bet-button-1 {
+    background-color: #225c1c;
+    box-shadow: inset 0px 0px 20px 1px #2d8924, 0px 0px 20px 1px rgb(37 94 26);;
+}
+
+.bet-button-2 {
+    background-color: #a09335;
+    box-shadow: inset 0px 0px 20px 1px rgb(248 244 74), 0px 0px 20px 1px rgb(121 93 28);
+}
+
+.bet-button-3 {
+    background-color: #8e471e;
+    box-shadow: inset 0px 0px 20px 1px rgb(203 87 75), 0px 0px 20px 1px rgb(105 41 33);
 }
