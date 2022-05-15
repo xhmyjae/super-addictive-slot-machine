@@ -9,16 +9,19 @@ body {
     display: flex;
     flex-direction: column;
     color: #FDFDFF;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stats {
     display: flex;
+    justify-content: space-around;
 }
 
 .game {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15vh;
 }
 
 /* COINS */
@@ -26,6 +29,12 @@ body {
     display: flex;
     align-items: center;
     font-size: 2rem;
+}
+
+.updates-coins {
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 /* SLOTS */
@@ -36,6 +45,9 @@ body {
 
 .slot {
     background: rgba(255, 255, 255, 0.83);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 25vh;
     height: 32vh;
     box-shadow: inset 0px 0px 20px 1px rgb(248 74 167), 0px 0px 20px 1px rgb(248 74 167);
@@ -72,4 +84,22 @@ body {
 .bet-button-3 {
     background-color: #8e471e;
     box-shadow: inset 0px 0px 20px 1px rgb(203 87 75), 0px 0px 20px 1px rgb(105 41 33);
+}
+
+/* SLOTS IMAGES */
+
+.casino {
+    background-image: url("../resources/casino.png");
+}
+
+.cherry {
+    background-image: url("../resources/cherry.png");
+}
+
+.diamond {
+    background-image: url("../resources/diamond.png");
+}
+
+.lemon {
+    background-image: url("../resources/lemon.png");
 }
