@@ -52,6 +52,8 @@ body {
     height: 32vh;
     box-shadow: inset 0px 0px 20px 1px rgb(248 74 167), 0px 0px 20px 1px rgb(248 74 167);
     margin: 0 1vh;
+    border: solid rgb(248 74 167);
+    border-radius: 1vh;
 }
 
 /* BUTTONS */
