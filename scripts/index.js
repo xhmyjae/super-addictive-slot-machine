@@ -81,7 +81,7 @@ class SlotMachine
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
-        } else if (slotsArray.filter(x=>x.classList.contains('casino')).length === 2) {
+        } else if (slotsArray.filter(x=>x.classList.contains('casino')).length === 3) {
             this.profit = this.bet * 10;
             this.coins += this.profit;
             win.play();
