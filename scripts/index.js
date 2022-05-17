@@ -13,6 +13,10 @@ class SlotMachine
 
     turnSlots() {
         this.slots.forEach(slot => {
+            if (this.bet <= this.coins) {
+                slot.spin();
+                this.coins -= this.bet;
+            }
             // faire alterner les images
             // intervale de 50 entre les 3 slots
             // check oif y'a assez de coins else break?
