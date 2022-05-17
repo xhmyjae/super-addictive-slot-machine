@@ -94,6 +94,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 3vh;
 }
 
 .bet-button:hover {
