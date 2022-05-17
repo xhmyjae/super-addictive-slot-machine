@@ -1,10 +1,11 @@
 class SlotMachine
 {
 
-    constructor(slots, bet, coins) {
+    constructor(slots, bet, coins, profit) {
         this.slots = slots;
         this.bet = bet;
         this.coins = coins;
+        this.profit = profit;
     }
 
     getCoins() {
@@ -29,6 +30,27 @@ class SlotMachine
 
     betResult() {
         // si slot 1/2/3 classlist contains diamons, ... this.coins += this.bet * num
+        if (this.slots[0].classList.contains('lemon') && this.slots[1].classList.contains('lemon') && this.slots[2].classList.contains('lemon')) {
+            this.profit = this.bet + this.bet * 1.25;
+            this.coins += this.profit;
+        } else if (this.slots[0].classList.contains('cherry') && this.slots[1].classList.contains('cherry') && this.slots[2].classList.contains('cherry')) {
+            this.profit = this.bet + this.bet * 1.5;
+            this.coins += this.profit;
+        } else if (this.slots[0].classList.contains('diamonds') || this.slots[1].classList.contains('diamonds') || this.slots[2].classList.contains('diamonds')) {
+            this.profit = this.bet + this.bet * 0.5;
+            this.coins += this.profit;
+        } else if (this.slots[0].classList.contains('diamonds') && slots[1].classList.contains('diamonds') || this.slots[0].classList.contains('diamonds') && this.slots[2].classList.contains('diamonds') || this.slots[1].classList.contains('diamonds') && this.slots[2].classList.contains('diamonds')) {
+            this.profit = this.bet + this.bet * 1;
+            this.coins += this.profit;
+        } else if (this.slots[0].classList.contains('diamonds') && this.slots[1].classList.contains('diamonds') && this.slots[2].classList.contains('diamonds')) {
+            this.profit = this.bet + this.bet * 2.5;
+            this.coins += this.profit;
+        } else if (this.slots[0].classList.contains('casino') && this.slots[1].classList.contains('casino') && this.slots[2].classList.contains('casino')) {
+            this.profit = this.bet + this.bet * 10;
+            this.coins += this.profit;
+        } else {
+            this.coins -= this.bet;
+        }
     }
 
 }
