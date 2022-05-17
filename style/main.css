@@ -72,7 +72,7 @@ body {
 
 .slot {
     background: rgba(255, 255, 255, 0.83);
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
     width: 25vh;

@@ -13,20 +13,33 @@ class SlotMachine
     }
 
     turnSlots() {
+        let currentCoins = document.querySelector('.current-coins');
+
         this.removeSlots();
         if (this.bet <= this.coins-this.bet) {
             this.coins -= this.bet;
+            currentCoins.innerHTML = this.coins;
             let index = 0;
             setInterval(() => {
                 let randomImage = ['lemon', 'lemon', 'cherry', 'cherry', 'diamond', 'diamond', 'casino'];
                 let randomNumber = Math.floor(Math.random() * randomImage.length);
+                let i = 0;
+                // setInterval(() => {
+                //     if (i < randomImage.length) {
+                //         this.slots[index].classList.add(randomImage[i]);
+                //         setInterval(() => {
+                //             this.slots[index].classList.remove(randomImage[i]);
+                //             i++;
+                //         }, 100);
+                //     }
+                // }, 400);
                 this.slots[index].classList.add(randomImage[randomNumber]);
                 index++;
                 if (index === this.slots.length) {
                     this.betResult();
                     clearInterval();
                 }
-            }, 200);
+            }, 300);
         } else {
             alert('You don\'t have enough coins');
         }
