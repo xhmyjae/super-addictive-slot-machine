@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "grobold";
+    src: url("GROBOLD.ttf");
+}
+
 html, body {
     margin: 0;
     width: 100%;
@@ -9,12 +14,13 @@ body {
     display: flex;
     flex-direction: column;
     color: #FDFDFF;
-    font-family: 'Poppins', sans-serif;
+    font-family: "grobold";
 }
 
 .stats {
     display: flex;
     justify-content: space-around;
+    height: 15vh;
 }
 
 .game {
@@ -25,16 +31,37 @@ body {
 }
 
 /* COINS */
+
 .coins {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.coins > div {
     display: flex;
     align-items: center;
     font-size: 2rem;
+    height: 42%;
+    clip-path: polygon(12% 21%, 100% 21%, 92% 87%, 2% 86%);
+    background-color: #652be2;
+    padding: 2vh 5vh;
 }
 
 .updates-coins {
     display: flex;
-    justify-content: left;
     align-items: center;
+    width: 30%;
+    font-size: 4vh;
+    justify-content: flex-end;
+}
+
+.current-coins {
+    margin-left: 2vh;
+}
+
+.fa-coins {
+    color: #bd910f;
 }
 
 /* SLOTS */

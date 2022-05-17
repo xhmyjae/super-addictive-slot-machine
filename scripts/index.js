@@ -14,7 +14,8 @@ class SlotMachine
 
     turnSlots() {
         this.removeSlots();
-        if (this.bet <= this.coins) {
+        if (this.bet <= this.coins-this.bet) {
+            this.coins -= this.bet;
             let index = 0;
             setInterval(() => {
                 let randomImage = ['lemon', 'lemon', 'cherry', 'cherry', 'diamond', 'diamond', 'casino'];
@@ -52,32 +53,32 @@ class SlotMachine
 
         // si slot 1/2/3 classlist contains diamons, ... this.coins += this.bet * num
         if (this.slots[0].classList.contains('lemon') && this.slots[1].classList.contains('lemon') && this.slots[2].classList.contains('lemon')) {
-            this.profit = this.bet + this.bet * 1.25;
+            this.profit = this.bet * 1.25;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
         } else if (this.slots[0].classList.contains('cherry') && this.slots[1].classList.contains('cherry') && this.slots[2].classList.contains('cherry')) {
-            this.profit = this.bet + this.bet * 1.5;
+            this.profit = this.bet * 1.5;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
         } else if (this.slots[0].classList.contains('diamond') || this.slots[1].classList.contains('diamond') || this.slots[2].classList.contains('diamond')) {
-            this.profit = this.bet + this.bet * 0.5;
+            this.profit = this.bet * 0.5;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
         } else if (this.slots[0].classList.contains('diamond') && slots[1].classList.contains('diamond') || this.slots[0].classList.contains('diamond') && this.slots[2].classList.contains('diamond') || this.slots[1].classList.contains('diamond') && this.slots[2].classList.contains('diamond')) {
-            this.profit = this.bet + this.bet * 1;
+            this.profit = this.bet * 1;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
         } else if (this.slots[0].classList.contains('diamond') && this.slots[1].classList.contains('diamond') && this.slots[2].classList.contains('diamond')) {
-            this.profit = this.bet + this.bet * 2.5;
+            this.profit = this.bet * 2.5;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
         } else if (this.slots[0].classList.contains('casino') && this.slots[1].classList.contains('casino') && this.slots[2].classList.contains('casino')) {
-            this.profit = this.bet + this.bet * 10;
+            this.profit = this.bet * 10;
             this.coins += this.profit;
             win.play();
             updateCoins.innerHTML = "+ " + this.profit + " coins";
