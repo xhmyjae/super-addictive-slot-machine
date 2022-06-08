@@ -8,10 +8,12 @@ class SlotMachine
         this.profit = profit;
     }
 
-    getCoins() {
-
-    }
-
+    /**
+     * The function first checks if the user has enough coins to play. If the user has enough coins, the function subtracts
+     * the bet amount from the total coins and updates the current coins. Then, the function generates a random image for
+     * each slot and adds the image to the slot. After the last slot has been updated, the function calls the betResult
+     * function
+     */
     turnSlots() {
         let currentCoins = document.querySelector('.current-coins');
         let updateCoins = document.querySelector('.updates-coins');
@@ -38,12 +40,16 @@ class SlotMachine
         }
     }
 
+    /**
+     * It removes the class names from the slots
+     */
     removeSlots() {
         this.slots.forEach(slot => {
             slot.classList.remove('lemon', 'cherry', 'diamond', 'casino');
         });
     }
 
+    /* Checking if the user has won or lost. */
     betResult() {
         let currentCoins = document.querySelector('.current-coins');
         let updateCoins = document.querySelector('.updates-coins');
@@ -55,7 +61,6 @@ class SlotMachine
         const win = new Audio("res/sounds/win.mp3");
         const lose = new Audio("res/sounds/lose.mp3");
 
-        // si slot 1/2/3 classlist contains diamons, ... this.coins += this.bet * num
         if (slotsArray.filter(x=>x.classList.contains('lemon')).length === 3) {
             this.profit = this.bet * 1.25;
             this.coins += this.profit;
@@ -92,12 +97,8 @@ class SlotMachine
             lose.play();
             updateCoins.innerHTML = "- " + this.profit + " coins";
         }
-        console.log(this.profit);
-        console.log(this.bet);
-        console.log(this.coins);
         currentCoins.innerHTML = this.coins;
     }
-
 }
 
 let slots = document.querySelectorAll('.slot');
@@ -106,6 +107,8 @@ let betButtons = document.querySelectorAll('.bet-button');
 
 let machine = new SlotMachine(slots, 0, 500, 0);
 
+/* Adding an event listener to each of the bet buttons. When the user clicks on a bet button, the event listener
+will call the turnSlots function. */
 betButtons.forEach(betButton => {
     betButton.addEventListener('click', e => {
        let btnEvent = e.target;
