@@ -47,6 +47,8 @@ class SlotMachine
             slot.classList.remove('lemon', 'cherry', 'diamond', 'casino');
         });
         updateCoins.classList.remove('shakeX');
+        bet.innerHTML = "";
+        result.innerHTML = "";
     }
 
     /* Checking if the user has won or lost. */
