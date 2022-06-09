@@ -54,6 +54,11 @@ body {
     width: 30%;
     font-size: 4vh;
     justify-content: flex-end;
+    flex-direction: column;
+}
+
+.shakeX {
+    animation: shakeX 1s;
 }
 
 .current-coins {
@@ -81,6 +86,7 @@ body {
     margin: 0 1vh;
     border: solid rgb(248 74 167);
     border-radius: 1vh;
+    animation:slide 1s infinite linear;
 }
 
 /* BUTTONS */
